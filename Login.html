@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Login</title>
+  <script>
+	  function validateLoginForm()
+{
+    var password = document.getElementById("password").value;
+    var usrnm = document.getElementById("username").value;
+    if(usrnm=="" || usrnm==null)
+    {
+        alert("Username cannot Be empty");
+        return false;
+    }
+    else if(password=null || password=="")
+    {
+        alert("password cannot be empty");
+        return false;
+    }
+    else if (password.match(/[a-z]/g) && password.match(/[A-Z]/g) && password.match( /[0-9]/g) && password.match(/[^a-zA-Z\d]/g) && password.length >= 8)
+    {
+        alert("Password must contain atleast one lower case letter, one upper case letter, one special character, one number");
+        return false;
+    }
+
+}
+  </script>
+ </head>
+ <link rel="stylesheet" href="Sheet-1.css">
+ <div>
+ <body >
+ <h1 style = "Color : blue;text-align : center">Mindtree Portal
+ </h1>
+ </div>
+ <div style = "height:70px;background-color : Lightblue;">
+ <img src="Logo.png" width="90px" height = "70px" align = "Right"></img>
+ </div>
+ <div>
+    <div class="container">
+        <div class="header">
+            <h2>Registration Form</h2>
+        </div>
+        <form id="form" class="form" onsubmit=" return validateLoginForm()">
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Username" id="username" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">Password</label>
+                <input type="password" placeholder="Password" id="password"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+        </form>
+    </div>
+    <div  style = "height:70px;background-color:lightgrey;">
+	 A 2021 Mindtree Limited
+    </div>
+</div>
+</body>
+</html>
